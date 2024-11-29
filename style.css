@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --main-color: #AF1740;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header" "main" "footer";
+    height: 300vh;
+}
+
+header {
+    grid-area: header;
+}
+
+header .container:nth-child(1) {
+    background-color: #FFFFFF;
+    height: 7.5vh;
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container:nth-child(1) .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: black;
+}
+
+header .container:nth-child(1) .logo i {
+    color: var(--main-color);
+}
+
+header .container:nth-child(1) form {
+    width: 50rem;
+    height: 5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+header .container:nth-child(1) form input {
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+
+header .container:nth-child(1) form label {
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+header .container:nth-child(1) form label:hover {
+    color: var(--main-color);
+}
+
+header .container:nth-child(1) .icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+header .container:nth-child(1) .icons div,
+header .container:nth-child(1) .icons a {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+header .container:nth-child(1) .icons div:hover,
+header .container:nth-child(1) .icons a:hover {
+    color: var(--main-color);
+}
+
+header .container:nth-child(2) {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container:nth-child(2) nav {
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+header .container:nth-child(2) nav a {
+    color: white;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+}
+
+header .container:nth-child(2) {
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+footer .footer {
+    height: 7.5vh;
+    width: 100%;
+    background-color: var(--main-color);
+}
