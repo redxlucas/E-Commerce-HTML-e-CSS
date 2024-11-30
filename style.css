@@ -24,7 +24,7 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header" "main" "footer";
-    height: 300vh;
+    height: 100vh;
 }
 
 header {
@@ -41,13 +41,18 @@ header .container:nth-child(1) {
 }
 
 header .container:nth-child(1) .logo {
-    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
     font-weight: bolder;
     color: black;
 }
 
-header .container:nth-child(1) .logo i {
-    color: var(--main-color);
+header .container:nth-child(1) .logo img {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
 }
 
 header .container:nth-child(1) form {
@@ -94,6 +99,11 @@ header .container:nth-child(1) .icons a {
     cursor: pointer;
 }
 
+header .container:nth-child(1) .icons .icon img {
+    height: 2rem;
+    width: 2rem;
+}
+
 header .container:nth-child(1) .icons div:hover,
 header .container:nth-child(1) .icons a:hover {
     color: var(--main-color);
@@ -118,6 +128,7 @@ header .container:nth-child(2) nav a {
 }
 
 header .container:nth-child(2) {
+
 }
 
 main {
