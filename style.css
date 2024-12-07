@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-:root {
-    --main-color: #AF1740;
-}
-
 * {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -17,6 +13,8 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(7.5vh + 4rem);
 }
 
 body {
@@ -24,38 +22,54 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header" "main" "footer";
-    height: 100vh;
+}
+
+.button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.8rem;
+    border-radius: 4rem;
+    margin: 2rem 0;
+    display: inline-block;
+}
+
+.button:hover {
+    transition-duration: 0.2s;
 }
 
 header {
     grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-header .container:nth-child(1) {
+header .container {
     background-color: #FFFFFF;
     height: 7.5vh;
     padding: 1.5rem 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
 }
 
-header .container:nth-child(1) .logo {
+header .container .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bolder;
-    color: black;
+    color: #AF1740;
 }
 
-header .container:nth-child(1) .logo img {
-    height: 3rem;
-    width: 3rem;
+header .container .logo img {
+    height: 4rem;
+    width: 4rem;
     margin-right: 1rem;
 }
 
-header .container:nth-child(1) form {
+header .container form {
     width: 50rem;
     height: 5rem;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -65,7 +79,7 @@ header .container:nth-child(1) form {
     align-items: center;
 }
 
-header .container:nth-child(1) form input {
+header .container form input {
     font-size: 1.6rem;
     padding: 0 1.2rem;
     height: 100%;
@@ -73,22 +87,12 @@ header .container:nth-child(1) form input {
     color: black;
 }
 
-header .container:nth-child(1) form label {
-    font-size: 2.5rem;
-    padding-right: 1.5rem;
-    color: black;
-    cursor: pointer;
-}
-
-header .container:nth-child(1) form label:hover {
-    color: var(--main-color);
-}
-
-header .container:nth-child(1) .icons {
+header .container .icons {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    gap: 1rem;
 }
 
 header .container:nth-child(1) .icons div,
@@ -99,16 +103,20 @@ header .container:nth-child(1) .icons a {
     cursor: pointer;
 }
 
-header .container:nth-child(1) .icons .icon img {
-    height: 2rem;
-    width: 2rem;
+header .container .icons .icon img {
+    height: 3rem;
+    width: 3rem;
 }
 
-header .container:nth-child(1) .icons div:hover,
-header .container:nth-child(1) .icons a:hover {
+header .container .icons .icon:nth-child(1) {
+    display: none;
+}
+
+header .container .icons div:hover,
+header .container .icons a:hover {
     color: var(--main-color);
 }
-
+/* 
 header .container:nth-child(2) {
     position: sticky;
     top: 0;
@@ -123,17 +131,284 @@ header .container:nth-child(2) nav {
 header .container:nth-child(2) nav a {
     color: white;
     display: inline-block;
-    padding: 1.2rem;
-    font-size: 1.7rem;
+    padding: 1.5rem 1.5rem 1rem 0;
 }
 
-header .container:nth-child(2) {
+header .container:nth-child(2) nav .icon img{
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+} */
 
-}
+
+
+/*-------------------------------------------------------------------------------------------------*/
+
+
+
 
 main {
     grid-area: main;
 }
+
+section {
+    padding: 5rem 9%;
+    position: relative;
+}
+
+.book-image {
+    width: 25vw;
+}
+
+section .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .content .content-text {
+    width: 50vw;
+    color: white;
+}
+
+section .content .content-text h1 {
+    font-size: 12rem;
+}
+
+section .content .content-text p {
+    font-size: 4rem;
+    font-weight: 200;
+}
+
+section .content .christmas-image {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+}
+
+section .content .content-text .button {
+    color: #AF1740;
+    background-color: white;
+}
+
+section .content .content-text .button:hover {
+    background-color: #6d0622;
+    color: white;
+}
+
+/* Animaçaõ da neve caindo */
+
+.snowfall {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, #AF1740, #4b081a);
+}
+
+.snowflake {
+    --small: 3px;
+    --medium: 7px;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: snow 6s linear infinite, wind 10s ease-in-out infinite;
+    top: -10%;
+    left: 10%;
+}
+
+.snowflake:nth-child(2n + 3) {
+    width: 7px;
+    height: 7px;
+}
+
+.snowflake:nth-child(1) {
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(2) {
+    left: 85%;
+    animation-delay: 1.5s;
+}
+
+.snowflake:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(4) {
+    left: 65%;
+    animation-delay: 2.5s;
+}
+
+.snowflake:nth-child(5) {
+    left: 25%;
+    animation-delay: 3s;
+}
+
+.snowflake:nth-child(6) {
+    left: 95%;
+    animation-delay: 3.5s;
+}
+
+.snowflake:nth-child(7) {
+    left: 55%;
+    animation-delay: 4s;
+}
+
+.snowflake:nth-child(8) {
+    left: 10%;
+    animation-delay: 4.5s;
+}
+
+.snowflake:nth-child(9) {
+    left: 70%;
+    animation-delay: 5s;
+}
+
+.snowflake:nth-child(10) {
+    left: 20%;
+    animation-delay: 5.5s;
+}
+
+@keyframes snow {
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes wind {
+    50% {
+        transform: translateX(120px);
+    }
+}
+
+
+
+/* ----------------------------------------------------------------------*/
+
+.popular-books {
+    margin: 8rem 15rem;
+}
+
+.popular-books > h1{
+    font-weight: bolder;
+    color: #AF1740;
+    font-size: 4rem;
+    text-align: start;
+    padding-bottom: 2rem;
+}
+
+.popular-books .book-sales {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
+}
+
+.popular-books .book-sales .book{
+    border: 0.1rem solid #ececec;
+    background: linear-gradient(15deg, #AF1740 50%, #ffffff 50%);
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.4s;
+}
+
+/* .popular-books .book-sales .book:nth-child(even){
+    background: linear-gradient(15deg, #32523d 50%, #ffffff 50%);
+}
+
+.popular-books .book-sales .book:nth-child(odd){
+    background: linear-gradient(15deg, #AF1740 50%, #ffffff 50%);
+} */
+
+.popular-books .book-sales .book img {
+    width: 50%;
+    height: auto;
+    align-self: center;
+    margin: 5rem;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.popular-books .book-sales .book .book-showcase {
+    color: white;
+    text-align: center;
+}
+
+.popular-books .book-sales .book .book-showcase p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.popular-books .book-sales .book .book-showcase h1{
+    font-size: 3.5rem;
+}
+
+.popular-books .book-sales .book .book-showcase h1 span {
+    text-decoration:line-through;
+    font-size: 2.5rem;
+}
+
+.popular-books .book-sales .book .book-showcase .button {
+    color: #AF1740;
+    background-color: white;
+}
+
+.popular-books .book-sales .book .book-showcase .button:hover {
+    background-color: #8b0c2e;
+    color: white;
+}
+
+.popular-books .book-sales .book:hover{
+    border-color: #AF1740;
+}
+
+.popular-books .book-sales .book img:hover{
+    transform: scale(1.1);
+}
+
+.categories {
+    margin: 8rem 15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.categories h1 {
+    font-size: 3.5rem;
+    color: #AF1740;
+    padding-bottom: 2rem;
+}
+
+.categories-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    height: 100%;
+    width: 100%;
+}
+
+.categories-list > a {
+    padding: 1.8rem;
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: black;
+    /* background-color: #AF1740; */
+    border-radius: 1rem;
+}
+
+.categories-list > a:hover {
+    border-color: #AF1740;
+    color: #AF1740;
+    transition-duration: 0.5s;
+}
+
+
+
+/* ----------------------------------------------------------------------*/
 
 footer {
     grid-area: footer;
@@ -142,5 +417,88 @@ footer {
 footer .footer {
     height: 7.5vh;
     width: 100%;
-    background-color: var(--main-color);
+    background-color: #AF1740;
+}
+
+@media (max-width: 1920px) {
+    html {
+        font-size: 60%
+    }
+}
+
+@media (max-width: 1768px) {
+    html {
+        font-size: 55%;
+    }
+
+    .popular-books .book-sales {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width:1280px) {
+    html {
+        font-size: 45%;
+    }
+
+    .popular-books .book-sales {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width:1080px) {
+    html {
+        font-size: 40%;
+    }
+
+    .popular-books .book-sales {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:991px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 50%;
+    }
+
+    .popular-books .book-sales {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:787px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 680px) {
+    html {
+        font-size: 40%;
+    }
+    .popular-books .book-sales {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header .container form {
+        display: none;
+        border: none;
+    }
+
+    header .container .icons .icon:nth-child(1) {
+        display: block;
+    }
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
 }
