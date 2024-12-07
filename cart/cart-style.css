@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(7.5vh + 4rem);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header" "main" "footer";
+}
+
+.button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.8rem;
+    border-radius: 4rem;
+    margin: 2rem 0;
+    display: inline-block;
+    color: white;
+    background-color: #AF1740;
+    cursor: pointer;
+}
+
+.button:hover {
+    transition-duration: 0.2s;
+    background-color: #8b0c2e;
+    color: white;
+}
+
+header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    background-color: #FFFFFF;
+    height: 7.5vh;
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+}
+
+header .container .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #AF1740;
+}
+
+header .container .logo img {
+    height: 4rem;
+    width: 4rem;
+    margin-right: 1rem;
+}
+
+header .container form {
+    width: 50rem;
+    height: 5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+header .container form input {
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+
+header .container .icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+header .container:nth-child(1) .icons div,
+header .container:nth-child(1) .icons a {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+header .container .icons .icon img {
+    height: 3rem;
+    width: 3rem;
+}
+
+header .container .icons .icon:nth-child(1) {
+    display: none;
+}
+
+header .container .icons div:hover,
+header .container .icons a:hover {
+    color: var(--main-color);
+}
+/* 
+header .container:nth-child(2) {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container:nth-child(2) nav {
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+header .container:nth-child(2) nav a {
+    color: white;
+    display: inline-block;
+    padding: 1.5rem 1.5rem 1rem 0;
+}
+
+header .container:nth-child(2) nav .icon img{
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+} */
+
+main {
+    grid-area: main;
+    height: 85vh;
+}
+
+.cart-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cart-container table {
+    width: 60vw;
+    border-collapse: collapse;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th {
+    text-align: left;
+    padding: 2rem;
+    color: white;
+    background-color: #AF1740;
+    font-size: 2rem;
+}
+
+th:nth-child(2),
+th:nth-child(3) {
+    text-align: center;
+}
+
+
+td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+    font-size: 1.5rem;
+}
+
+td input {
+    width: 8rem;
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+td a {
+    color: #8b0c2e;
+    font-size: 1.2rem;
+}
+
+td img {
+    width: 5vw;
+    height: auto;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    margin: 0 2rem 2rem 2rem;
+}
+
+
+.total {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.price {
+    text-align: center;
+}
+
+/* .book-container {
+    display: flex;
+    height: 100%;
+}
+
+.book-container .book-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.book-container .book-image img {
+    width: 20vw;
+    height: auto;
+    margin: 5rem;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.book-container .book-image img:hover {
+    transform: scale(1.1);
+}
+
+.book-container .content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 5rem;
+}
+
+.book-container .content h1 {
+    font-size: 6rem;
+    color: #AF1740;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.book-container .content h3 {
+    font-size: 2.5rem;
+    color: #000000;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.book-container .content h3 > span {
+    text-decoration: line-through;
+}
+
+.book-container .content p {
+    font-size: 1.25rem;
+    word-wrap: break-word;
+    white-space: normal;
+} */
+
+footer {
+    grid-area: footer;
+    height: 7.5vh;
+    width: 100%;
+    background-color: #AF1740;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+    list-style-type: none;
+    padding-top: 2rem;
+}
+
+footer ul li a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+footer .legal-info {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 1rem;
+}
+
+@media (max-width: 1460px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 1280px) {
+    html {
+        font-size: 45%;
+    }
+}
+
+@media (max-width: 1045px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 862px) {
+    html {
+        font-size: 35%;
+    }
+    header .container form {
+        display: none;
+        border: none;
+    }
+
+    header .container .icons .icon:nth-child(1) {
+        display: block;
+    }
+
+    .cart-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-container .book-image img {
+        width: 10vw;
+    }
+
+    .cart-container .content{
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 510px) {
+    html {
+        font-size: 30%;
+    }
+}
