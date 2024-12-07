@@ -120,36 +120,6 @@ header .container .icons div:hover,
 header .container .icons a:hover {
     color: var(--main-color);
 }
-/* 
-header .container:nth-child(2) {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header .container:nth-child(2) nav {
-    background-color: var(--main-color);
-    text-align: center;
-}
-
-header .container:nth-child(2) nav a {
-    color: white;
-    display: inline-block;
-    padding: 1.5rem 1.5rem 1rem 0;
-}
-
-header .container:nth-child(2) nav .icon img{
-    display: inline-block;
-    height: 2rem;
-    width: 2rem;
-} */
-
-
-
-/*-------------------------------------------------------------------------------------------------*/
-
-
-
 
 main {
     grid-area: main;
@@ -194,8 +164,6 @@ section .content .content-text .button:hover {
     background-color: #6d0622;
     color: white;
 }
-
-/* Animaçaõ da neve caindo */
 
 .snowfall {
     position: absolute;
@@ -285,10 +253,6 @@ section .content .content-text .button:hover {
     }
 }
 
-
-
-/* ----------------------------------------------------------------------*/
-
 .popular-books {
     margin: 8rem 15rem;
 }
@@ -314,14 +278,6 @@ section .content .content-text .button:hover {
     flex-direction: column;
     transition-duration: 0.4s;
 }
-
-/* .popular-books .book-sales .book:nth-child(even){
-    background: linear-gradient(15deg, #32523d 50%, #ffffff 50%);
-}
-
-.popular-books .book-sales .book:nth-child(odd){
-    background: linear-gradient(15deg, #AF1740 50%, #ffffff 50%);
-} */
 
 .popular-books .book-sales .book img {
     width: 50%;
@@ -395,10 +351,6 @@ section .content .content-text .button:hover {
     color: white;
     transition-duration: 0.5s;
 }
-
-
-
-/* ----------------------------------------------------------------------*/
 
 footer {
     grid-area: footer;
