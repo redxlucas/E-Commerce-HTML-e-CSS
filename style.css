@@ -533,6 +533,10 @@ footer .legal-info {
     header .container .icons .icon:nth-child(1) {
         display: block;
     }
+
+    main .content img {
+        width: 40vw;
+    }
 }
 
 @media (max-width: 510px) {
@@ -547,6 +551,10 @@ footer .legal-info {
 
     header .container .icons .icon:nth-child(1) {
         display: block;
+    }
+
+    main .content img {
+        width: 50vw;
     }
 }
 
