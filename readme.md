@@ -8,7 +8,7 @@ Acesse o projeto clicando [aqui.](https://redxlucas.github.io/E-Commerce-HTML-e-
 
 ## Fotos
 
-![App Screenshot](/E-Commerce-HTML-e-CSS/img/readme/pagina-principal.png)
+![Imagem Tela Principal](https://github.com/user-attachments/assets/dac4bb80-7d03-444f-9939-8a3608cb9e7b)
 
 ## Referências
 
